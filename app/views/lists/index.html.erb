@@ -1,0 +1,5 @@
+<h3>一覧</h3>
+<% @lists.each do |list| %>
+<p><%= link_to list.title, list_path(list.id)  %></p>
+<p><%= list.body %></p>
+<% end %>
