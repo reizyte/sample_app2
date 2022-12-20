@@ -1,5 +1,5 @@
 <h3>編集</h3>
-<%= form_with model: @list, url:update_list_path(@list), method: :patch do |f| %>
+<%= form_with model: @list, url:list_path(@list), method: :patch do |f| %>
 <%= f.text_field :title %>
 <%= f.text_area :body %>
 <%= f.submit "保存" %>
