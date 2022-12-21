@@ -1,10 +1,15 @@
-<h3>一覧</h3>
+<div class="list-wrap">
 <% @lists.each do |list| %>
-<p><%= link_to list.title, list_path(list.id)  %></p>
-<p><%= list.body %></p>
-<% if list.image.attached? %>
-<%= image_tag list.image, size: "200x200" %>
-<% else %>
-<%= image_tag 'no_image', size: "200x200" %>
+  <div class="list-box">
+    <% if list.image.attached? %>
+      <%= image_tag list.image, size: "200x200" %>
+    <% else %>
+      <%= image_tag 'no_image', size: "200x200" %>
+    <% end %>
+    <div class="list-comment">
+      <span class="list-body"><%= list.body %></span>
+      <span class="list-title"><%=link_to list.title, list_path(list.id) %></span>
+    </div>
+  </div>
 <% end %>
-<% end %>
+</div>
